@@ -1,3 +1,3 @@
 # Rust-test-program
 
-to test a rust lang
+the simple lucky game to guess a secret number(1-100)
