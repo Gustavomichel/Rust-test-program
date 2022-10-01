@@ -7,8 +7,11 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1..= 100);
 
-    println!("The secret number is: {secret_number}");
+    let mut chances: u32 = 0;
+
+    //println!("The secret number is: {secret_number}");
     loop{
+        chances += 1;
         println!("Please input your guess.");
         
         let mut guess = String::new();
@@ -32,5 +35,12 @@ fn main() {
                 break;
             }
         }
+    }
+    if chances >= 10{
+        println!("\nyou are a puppy")
+    }else if chances >= 3{
+        println!("\nyou are a master")
+    }else if chances < 3{
+        println!("\nYOU A MASTERPIECE")
     }
 }  
