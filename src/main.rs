@@ -12,7 +12,7 @@ fn main() {
     //println!("The secret number is: {secret_number}");
     loop{
         chances += 1;
-        println!("Please input your guess.");
+        println!("Please input your guess:");
         
         let mut guess = String::new();
 
@@ -25,7 +25,7 @@ fn main() {
             Err(_) => continue,
         };
 
-        println!("You guessed: {guess}");
+        println!("\nYou guessed: {guess}");
 
         match guess.cmp(&secret_number){
             Ordering::Less => println!("Too small"),
@@ -36,11 +36,14 @@ fn main() {
             }
         }
     }
+    println!("\nchances: {chances}");
     if chances >= 10{
-        println!("\nyou are a puppy")
+        println!("you are a puppy")
+    }else if chances >= 4 && chances < 10{
+        println!("you are medium")
     }else if chances >= 3{
-        println!("\nyou are a master")
+        println!("you are a master")
     }else if chances < 3{
-        println!("\nYOU A MASTERPIECE")
+        println!("YOU A MASTERPIECE!!!")
     }
 }  
